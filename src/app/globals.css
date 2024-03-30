@@ -2,32 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: Axiforma;
+  src: url("/assets/fonts/Axiforma Medium.otf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --primary: rgba(255, 252, 240, 1);
+  --secondary: rgba(255, 246, 225, 1);
+  --white: rgba(255, 255, 255, 1);
+  --black: rgba(0, 0, 0, 1);
+  --font-axiforma: Axiforma;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-axiforma) !important;
+}
+
+@layer base {
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: rgba(0, 0, 0, 0);
+  }
+
+  *::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #09bdfe00;
+    border-radius: 10px;
+    border: 1px solid #fff;
+  }
 }
 
 @layer utilities {
   .text-balance {
-    text-wrap: balance;
+    @apply text-balance;
   }
+}
+
+@layer components {
+  .navlist {
+    @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[1.8rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900] after:to-transparent text-[#A9B1BB] transition-[height];
+  }
+  .navActive {
+    @apply before:h-[2.8125rem] after:w-full !text-white transition-all !duration-700;
+  }
+
+  .navtext {
+    @apply text-sm capitalize font-normal mt-1;
+  }
+}
+
+.disabled {
+  opacity: 30 !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+  color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.line-effect {
+  background-image: url("/assets/images/cards/previous/line-effect.svg");
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.bg-orange {
+  background-color: #ff4d00;
+}
+
+.bg-yellow {
+  background-color: #ebd051;
+}
+
+.bg-green {
+  background-color: #436b71;
+}
+
+.bg-peach {
+  background-color: #fe705c;
+}
+
+.balance-card {
+  background: linear-gradient(
+      0deg,
+      rgba(104, 207, 236, 0.31) 0%,
+      rgba(104, 207, 236, 0.31) 100%
+    ),
+    url("/assets/images/home/balance.png") lightgray -26.346px 0px / 110.496% 100%
+      no-repeat;
+  background-blend-mode: overlay, normal;
+}
+
+.shadow-card {
+  filter: drop-shadow(0px 9px 17.7px rgba(0, 0, 0, 0.53));
+}
+
+/* background gradients */
+
+.gradient-1 {
+  background: linear-gradient(308deg, #ffbe1d 37.31%, #ffdd89 98.03%);
 }
