@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar/navbar";
 import SideBar from "@/components/sidebar/sidebar";
 import SubscriptionContent from "@/components/pages/subscription/subscriptionContent";
 
-export default function Subscription() {
+const Subscription = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
@@ -12,4 +12,6 @@ export default function Subscription() {
       </div>
     </div>
   );
-}
+};
+
+export default Subscription;

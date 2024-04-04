@@ -12,7 +12,7 @@ export default function SubscriptionContent() {
         width={1000}
         height={1000}
       />
-      <div className="grid grid-cols-6 items-center gap-[7.5rem] px-[2rem] 2xl:px-[5rem]">
+      <div className="grid grid-cols-6 items-center gap-[1rem] lg:gap-[7.5rem] sm:px-[2rem] 2xl:px-[5rem]">
         <div className="flex  col-span-7 lg:col-span-3 rounded-[1rem] min-h-[20rem] sm:min-h-[28rem] sm:max-h-[28rem] px-[0.75rem] py-4  items-end h-full relative">
           <Image
             src={"/assets/images/subscription/truck.png"}
@@ -22,7 +22,7 @@ export default function SubscriptionContent() {
             height={1000}
           />
         </div>
-        <div className="flex col-span-7 lg:col-span-3 min-h-[20rem] sm:min-h-[28rem] sm:max-h-[28rem]">
+        <div className="flex col-span-7 lg:col-span-3 mb-[4rem] lg:mb-0 lg:min-h-[28rem] lg:max-h-[28rem]">
           <EarningBalance />
         </div>
       </div>

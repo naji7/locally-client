@@ -1,6 +1,6 @@
 import { previousdata } from "@/constants/data";
-import HomePrevious from "@/components/cards/homePrevious";
 import Slider from "@/components/slider/slider";
+import { HomePrevious } from "@/components/cards/homePrevious";
 
 export default function Previous() {
   return (

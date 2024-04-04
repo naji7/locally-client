@@ -7,7 +7,7 @@ export default function Home() {
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
       <div className="flex flex-col h-full justify-start w-full relative">
-        <Navbar title="Wlcs" subtitle="" />
+        <Navbar title="welcome back !" subtitle="Mohammad Reza" />
         <HomeContent />
       </div>
     </div>
