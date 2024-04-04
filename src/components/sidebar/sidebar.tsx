@@ -76,11 +76,11 @@ export default function SideBar() {
             </div>
             {showDropdown && (
               <ul
-                className={`flex pl-[1.5rem]  pb-[2.25rem] pr-[3.15rem] flex-col gap-[1rem] w-full border-b border-[#3A3A3A]`}
+                className={`flex pl-[1.5rem]  pb-[2.25rem]  flex-col gap-[1rem] w-full border-b border-[#3A3A3A]`}
               >
-                <Link href={"#"}>
+                <Link href={"/giveaway/active"}>
                   <li
-                    className={`navlist ${isActive("#") ? "navActive" : ""} `}
+                    className={`navlistGiveaway ${isActive("/giveaway/active") ? "navActive" : ""} `}
                   >
                     <Image
                       src={"/assets/icons/sidebar/giveawayActive.svg"}
@@ -94,7 +94,7 @@ export default function SideBar() {
                 </Link>
                 <Link href={"#"}>
                   <li
-                    className={`navlist ${isActive("#") ? "navActive" : ""} `}
+                    className={`navlistGiveaway ${isActive("#") ? "navActive" : ""} `}
                   >
                     <Image
                       src={"/assets/icons/sidebar/giveawayUpcoming.svg"}
@@ -108,7 +108,7 @@ export default function SideBar() {
                 </Link>
                 <Link href={"#"}>
                   <li
-                    className={`navlist ${isActive("#") ? "navActive" : ""} `}
+                    className={`navlistGiveaway ${isActive("#") ? "navActive" : ""} `}
                   >
                     <Image
                       src={"/assets/icons/sidebar/giveawayPast.svg"}
