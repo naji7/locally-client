@@ -53,6 +53,11 @@ body {
   .navlist {
     @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[1.8rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900] after:to-transparent text-[#A9B1BB] transition-[height];
   }
+
+  .navlistGiveaway {
+    @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[3.3rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900] after:to-transparent text-[#A9B1BB] transition-[height];
+  }
+
   .navActive {
     @apply before:h-[2.8125rem] after:w-full !text-white transition-all !duration-700;
   }
@@ -75,22 +80,6 @@ body {
   inset: 0;
 }
 
-.bg-orange {
-  background-color: #ff4d00;
-}
-
-.bg-yellow {
-  background-color: #ebd051;
-}
-
-.bg-green {
-  background-color: #436b71;
-}
-
-.bg-peach {
-  background-color: #fe705c;
-}
-
 .balance-card {
   background: linear-gradient(
       0deg,
@@ -110,4 +99,14 @@ body {
 
 .gradient-1 {
   background: linear-gradient(308deg, #ffbe1d 37.31%, #ffdd89 98.03%);
+}
+
+.main-banner {
+  background: url("/assets/images/giveaway/active/main-banner.png");
+  background-size: cover;
+}
+
+.timeline-ul li:nth-child(10)::after {
+  content: "";
+  display: none;
 }

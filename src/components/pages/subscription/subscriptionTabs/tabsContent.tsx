@@ -35,27 +35,27 @@ export const TabsContent = ({
     setActive(newTabs[0]);
   };
 
-  const [hovering, setHovering] = useState(false);
+  // const [hovering, setHovering] = useState(false);
 
   return (
     <>
       <div
         className={cn(
-          "flex flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full w-full",
+          "flex flex-col md:flex-row items-center justify-center [perspective:1000px] relative overflow-auto sm:overflow-visible no-visible-scrollbar max-w-full md:max-w-[675px] w-full mx-auto",
           containerClassName
         )}
       >
-        <div className="bg-[#F5F5F5] flex py-[0.7rem] px-[0.85rem] rounded-[4.3125rem] gap-[1rem]">
+        <div className="bg-[#F5F5F5]  flex flex-row py-[0.7rem] px-[0.4rem] md:px-[0.85rem] rounded-[1.5rem] md:rounded-[4.3125rem] gap-[1rem] w-full justify-between">
           {propTabs.map((tab, idx) => (
             <button
               key={tab.title}
               onClick={() => {
                 moveSelectedTabToTop(idx);
               }}
-              onMouseEnter={() => setHovering(true)}
-              onMouseLeave={() => setHovering(false)}
+              // onMouseEnter={() => setHovering(true)}
+              // onMouseLeave={() => setHovering(false)}
               className={cn(
-                "relative px-[3rem] py-4 rounded-full",
+                "relative px-[1rem] md:px-[3rem] py-2 md:py-4 rounded-full",
                 tabClassName
               )}
               style={{
@@ -67,26 +67,33 @@ export const TabsContent = ({
                   layoutId="clickedbutton"
                   transition={{ type: "spring", bounce: 0.3, duration: 0.6 }}
                   className={cn(
-                    "absolute inset-0 rounded-[5.625rem] bg-black !text-white",
+                    "absolute inset-0 rounded-[1rem] md:rounded-[5.625rem] bg-black !text-white",
                     activeTabClassName
                   )}
                 />
               )}
 
               {active.value === tab.value ? (
-                <span
-                  className={cn(
-                    "relative block capitalize text-white text-sm font-medium"
-                  )}
-                >
-                  {tab.title}
-                </span>
-              ) : (
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="relative flex items-center capitalize text-black ">
+                <div className="flex items-center flex-col sm:flex-row justify-center gap-2 text-sm">
+                  <span
+                    className={cn(
+                      "relative block capitalize text-white text-xs md:text-sm font-medium"
+                    )}
+                  >
                     {tab.title}
                   </span>
-                  <span className=" capitalize text-[#EE391C]">{tab.offer}</span>
+                  <span className=" capitalize text-xs md:text-sm text-[#EE391C] z-[9]">
+                    {tab.offer}
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center flex-col sm:flex-row justify-center gap-2 text-sm">
+                  <span className="relative flex items-center capitalize text-black text-xs md:text-sm">
+                    {tab.title}
+                  </span>
+                  <span className=" capitalize text-[#EE391C] text-xs md:text-sm">
+                    {tab.offer}
+                  </span>
                 </div>
               )}
             </button>
@@ -97,8 +104,8 @@ export const TabsContent = ({
         tabs={tabs}
         active={active}
         key={active.value}
-        hovering={hovering}
-        className={cn("mt-32", contentClassName)}
+        // hovering={hovering}
+        className={cn("mt-[4.5rem] mb-12", contentClassName)}
       />
     </>
   );
@@ -133,7 +140,11 @@ export const FadeInDiv = ({
           animate={{
             y: isActive(tab) ? [0, 40, 0] : 0,
           }}
-          className={cn("w-full h-full absolute top-0 left-0", className)}
+          className={cn(
+            "w-full h-full absolute top-0 left-0 ",
+            className,
+            isActive(tab) ? "visible" : "invisible"
+          )}
         >
           {tab.content}
         </motion.div>
