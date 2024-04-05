@@ -92,9 +92,9 @@ export default function SideBar() {
                     <span className="navtext">active</span>
                   </li>
                 </Link>
-                <Link href={"#"}>
+                <Link href={"/giveaway/upcoming"}>
                   <li
-                    className={`navlistGiveaway ${isActive("#") ? "navActive" : ""} `}
+                    className={`navlistGiveaway ${isActive("/giveaway/upcoming") ? "navActive" : ""} `}
                   >
                     <Image
                       src={"/assets/icons/sidebar/giveawayUpcoming.svg"}
@@ -106,9 +106,9 @@ export default function SideBar() {
                     <span className="navtext">Upcoming</span>
                   </li>
                 </Link>
-                <Link href={"#"}>
+                <Link href={"/giveaway/past"}>
                   <li
-                    className={`navlistGiveaway ${isActive("#") ? "navActive" : ""} `}
+                    className={`navlistGiveaway ${isActive("/giveaway/past") ? "navActive" : ""} `}
                   >
                     <Image
                       src={"/assets/icons/sidebar/giveawayPast.svg"}
@@ -139,8 +139,8 @@ export default function SideBar() {
                 <span className="navtext">subscription</span>
               </li>
             </Link>
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/entries"}>
+              <li className={`navlist ${isActive("/entries") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/entries.svg"}
                   alt="navlink"
@@ -151,8 +151,8 @@ export default function SideBar() {
                 <span className="navtext">my entries</span>
               </li>
             </Link>
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/transactions"}>
+              <li className={`navlist ${isActive("/transactions") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/transaction.svg"}
                   alt="navlink"

@@ -1,3 +1,5 @@
+import { url } from "inspector";
+
 export const upcomingdata = [
   {
     url: "/assets/images/cards/upcoming/img-1.png",
@@ -128,5 +130,51 @@ export const planDetails = [
       "Referral Commission: 10%",
       "Partner Store Discounts: 10% - 15%",
     ],
+  },
+];
+
+export const activentrydata = [
+  {
+    url: "/assets/images/cards/activeEntry/mystery-box.png",
+    title: "Mystery Gift",
+    entries: "144",
+    className: "#EBD05133",
+  },
+  {
+    url: "/assets/images/cards/activeEntry/mazda-bt.png",
+    title: "2023 MAZDA BT-50",
+    entries: "149",
+    className: "#FE705C33",
+  },
+];
+
+export const transactionsHistory = [
+  {
+    name: "subscription",
+    date: "15/02/2024",
+    time: "23:45:05",
+    price: "170.86",
+    method: "stripe",
+  },
+  {
+    name: "subscription",
+    date: "15/02/2024",
+    time: "23:45:05",
+    price: "170.86",
+    method: "stripe",
+  },
+  {
+    name: "subscription",
+    date: "15/02/2024",
+    time: "23:45:05",
+    price: "170.86",
+    method: "stripe",
+  },
+  {
+    name: "subscription",
+    date: "15/02/2024",
+    time: "23:45:05",
+    price: "170.86",
+    method: "stripe",
   },
 ];

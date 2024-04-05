@@ -2,14 +2,6 @@ import { cn } from "@/utils/cn";
 import Image from "next/image";
 import React from "react";
 
-// type Props = {
-//   title: string;
-//   url: string;
-//   name: string;
-//   date: string;
-//   userId: string;
-//   className: string;
-// };
 
 export const HomePrevious = ({
   className,
