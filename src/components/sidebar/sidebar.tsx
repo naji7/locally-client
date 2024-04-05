@@ -205,8 +205,8 @@ export default function SideBar() {
           </ul>
           <hr className="w-10/12 border-[#3A3A3A] my-[2.5rem] mx-auto" />
           <ul className="flex flex-col gap-[1.5rem] w-full px-[1.8rem]">
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/news"}>
+              <li className={`navlist ${isActive("/news") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/news.svg"}
                   alt="navlink"

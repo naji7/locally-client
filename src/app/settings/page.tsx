@@ -1,5 +1,4 @@
 import Navbar from "@/components/navbar/navbar";
-import SettingsForm from "@/components/forms/settingsForm";
 import SideBar from "@/components/sidebar/sidebar";
 import SettingsContent from "@/components/pages/settings/settingsContent";
 
