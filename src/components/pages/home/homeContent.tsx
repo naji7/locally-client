@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { ImagesSlider } from "./imageSlider/imageSlider";
-import Upcoming from "./upcoming/upcoming";
+import Upcoming from "../../sliders/upcoming/upcoming";
 import EarningBalance from "@/components/cards/earningBalance";
-import Previous from "./previous/previous";
+import Previous from "../../sliders/previous/previous";
 
 export default function HomeContent() {
   return (
@@ -22,8 +22,8 @@ export default function HomeContent() {
           <ImagesSlider />
         </div>
       </div>
-      <Upcoming />
-      <Previous/>
+      <Upcoming title="Giveaways" />
+      <Previous title="Winners"/>
     </div>
   );
 }

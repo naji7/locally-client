@@ -1,21 +1,19 @@
-'use client'
+"use client";
 
 import React from "react";
-import Withdraw from "../settingsForm/withdraw";
-import Link from "next/link";
 import { useForm } from "react-hook-form";
 
 interface IFormInput {
   firstName: string;
-  email:string ;
+  email: string;
   agreeTerms: string;
-  surname:string;
-  phonenumber:string;
-  birthday:string;
-  address1:string;
-  address2:string;
-  city:string;
-   state:string;
+  surname: string;
+  phonenumber: string;
+  birthday: string;
+  address1: string;
+  address2: string;
+  city: string;
+  state: string;
 }
 
 function SettingsForm() {
@@ -42,11 +40,9 @@ function SettingsForm() {
           <input
             id="fname"
             type="string"
-
             placeholder="First name"
             {...register("firstName")}
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium text-base font-medium outline-none"
-
           />
         </div>
         <div className="flex flex-col  w-full gap-[5px]">
@@ -56,11 +52,9 @@ function SettingsForm() {
           <input
             id="surname"
             type="string"
-
             placeholder="Surname"
             {...register("surname")}
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium text-base font-medium outline-none"
-
           />
         </div>
       </div>
@@ -71,11 +65,9 @@ function SettingsForm() {
         <input
           id="email"
           type="email"
-
           placeholder="email"
           {...register("email", { required: true })}
           className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium text-base font-medium outline-none"
-
         />
         {errors.email && (
           <span className="text-red-500">Email is required</span>
@@ -90,11 +82,9 @@ function SettingsForm() {
           <input
             id="number"
             type="tel"
-
             placeholder="phone number"
             {...register("phonenumber", { required: true })}
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
         <div className="flex flex-col  w-full gap-[5px]">
@@ -106,7 +96,6 @@ function SettingsForm() {
             type="date"
             {...register("birthday", { required: true })}
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-xs md:text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
       </div>
@@ -120,9 +109,7 @@ function SettingsForm() {
             type="text"
             placeholder="Address Line 1 "
             {...register("address1", { required: true })}
-
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
         <div className="flex flex-col  w-full gap-[5px]">
@@ -134,7 +121,6 @@ function SettingsForm() {
             type="text"
             placeholder="Address Line 2 "
             {...register("address2", { required: true })}
-
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
           />
         </div>
@@ -149,9 +135,7 @@ function SettingsForm() {
             type="text"
             placeholder="City "
             {...register("city", { required: true })}
-
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
         <div className="flex flex-col  w-full gap-[5px]">
@@ -164,7 +148,6 @@ function SettingsForm() {
             placeholder="Address Line 2 "
             {...register("state", { required: true })}
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
         <div className="flex flex-col  w-full gap-[5px]">
@@ -175,9 +158,7 @@ function SettingsForm() {
             id="pcode"
             type="text"
             placeholder="Postal Code "
-
             className="border rounded-xl w-full py-[16px] px-[24px] text-black placeholder-black text-base font-medium outline-none placeholder:text-xs md:placeholder:text-base placeholder:text-black/40 placeholder:font-medium"
-
           />
         </div>
       </div>

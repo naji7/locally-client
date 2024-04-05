@@ -18,7 +18,7 @@
 body {
   background: var(--white);
   color: var(--black);
-  font-family: var(--font-axiforma) , sans-serif !important;
+  font-family: var(--font-axiforma), sans-serif !important;
 }
 
 button,
@@ -59,8 +59,16 @@ input {
     @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[1.8rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900] after:to-transparent text-[#A9B1BB] transition-[height];
   }
 
+  .transactionList {
+    @apply before:w-[5px] before:h-[0rem]  before:bg-[#6ED9F7] before:absolute before:-left-[1.8rem]  duration-700  after:w-[0] after:h-[5.375rem] after:-left-[1.8rem] after:opacity-[0.19] after:bg-gradient-to-r after:absolute after:from-[#6ED9F7] after:-z-[2] after:to-transparent;
+  }
+
+  .transactionActive{
+    @apply before:h-[5.375rem] after:w-full !text-white transition-all !duration-700;
+  }
+
   .navlistGiveaway {
-    @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[3.3rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900] after:to-transparent text-[#A9B1BB] transition-[height];
+    @apply flex items-center justify-start relative gap-[1.5rem] w-full before:w-[5px] before:h-[0rem]  before:bg-[#FF9900] before:absolute before:-left-[3.3rem]  duration-700  after:w-[0] after:h-[2.8125rem] after:-right-[1.8rem] after:bg-gradient-to-l after:absolute after:from-[#FF9900]  after:to-transparent text-[#A9B1BB] transition-[height];
   }
 
   .navActive {
@@ -84,6 +92,11 @@ input {
   position: absolute;
   inset: 0;
 }
+
+/* .transactionList::after{
+content: '';
+background: linear-gradient();
+} */
 
 .balance-card {
   background: linear-gradient(
@@ -114,4 +127,8 @@ input {
 .timeline-ul li:nth-child(10)::after {
   content: "";
   display: none;
+}
+
+.activeEntry-shadow {
+  filter: drop-shadow(0px 27px 36.8px rgba(94, 193, 220, 0.49));
 }
