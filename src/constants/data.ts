@@ -178,3 +178,38 @@ export const transactionsHistory = [
     method: "stripe",
   },
 ];
+
+export const newsData = [
+  {
+    url: "/assets/images/news/mazda.png",
+    title: "2023 MAZDA BT-50",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    date: " 2023-05-02",
+    likes: "51",
+  },
+  {
+    url: "/assets/images/news/daily-drop.png",
+    title: "Daily Drop Cars",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    date: " 2023-05-02",
+    likes: "51",
+  },
+  {
+    url: "/assets/images/news/benz-e.png",
+    title: "2024 Benz E-Class",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    date: " 2023-05-02",
+    likes: "51",
+  },
+  {
+    url: "/assets/images/news/mazda.png",
+    title: "2023 MAZDA BT-50",
+    description:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    date: " 2023-05-02",
+    likes: "51",
+  },
+];
