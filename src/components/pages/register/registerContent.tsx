@@ -5,19 +5,18 @@ import React from "react";
 
 function RegisterContent() {
   return (
-    <div className="flex flex-col items-center w-full ">
-      <div className="bg-[#78DCF8] px-9 pr-[1.25rem] py-[2.3rem] w-full h-4/5 relative">
-      < RegisterNavBar />
-      {/* <div className="absolute ">
-      <RegisterCard/>
-      </div> */}
-      </div>
-      
-      
-      <div className="bg-white px-9 pr-[1.25rem] py-[2.3rem] w-full relative ">
-      < RegisterForm />
+    <div className="flex flex-col items-center w-full px-9  bg-white relative  ">
+      <div className="bg-[#78DCF8]  w-full h-4/5 absolute">
+        <RegisterNavBar />
       </div>
 
+      <div className=" absolute top-[56%]  w-full px-12 ">
+        <RegisterCard />
+
+        <div className=" w-full px-10 py-9 absolute ">
+          <RegisterForm />
+        </div>
+      </div>
     </div>
   );
 }
