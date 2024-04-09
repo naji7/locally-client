@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function RegisterCard() {
   return (
-    <div className="flex items-center justify-between w-full gap-4">
+    <div className="flex items-center justify-between w-full gap-4 px-12">
       <div className="flex flex-col  border-2 border-[#5EC1DC] w-[22rem] h-[25rem] rounded-2xl items-center justify-between py-7  bg-[#EFF9FB]  ">
         <div className="flex items-center justify-between w-3/4 gap-[3.7rem]   ">
           <div className="flex flex-col items-start justify-start ">
