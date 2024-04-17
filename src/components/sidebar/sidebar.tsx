@@ -217,8 +217,8 @@ export default function SideBar() {
                 <span className="navtext">news</span>
               </li>
             </Link>
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/chat"}>
+              <li className={`navlist ${isActive("/chat") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/chat.svg"}
                   alt="navlink"
