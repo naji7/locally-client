@@ -9,12 +9,15 @@ function Groupinfo() {
     <div className="flex items-center justify-center w-1/4 h-screen border-r relative">
       <Groups />
     </div>
-    <div className="flex flex-col items-center justify-center w-3/4 h-screen  border-r relative">
-      <GroupForm />
-      {/* <GroupBody/> */}
-
+   
+    <div className="flex flex-col items-start justify-center w-3/4 h-screen   relative ">
       
-    </div>
+      <GroupForm />
+      
+      <GroupBody/>
+        
+        
+      </div>
   </div>
   )
 }

@@ -37,7 +37,7 @@ function Groups() {
 
       {/* chats */}
 
-      <div className="flex flex-col items-start justify-start w-full ">
+      <div className="flex flex-col items-start justify-start w-full absolute top-20">
         <ul className="flex flex-col  w-full  ">
           <Link href={"/"}>
             <div className="flex  items-center justify-start w-full h-[84px] gap-3 px-4 ">
