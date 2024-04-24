@@ -1,11 +1,6 @@
 import Navbar from "@/components/navbar/navbar";
+import BusinessContent from "@/components/pages/businessCard/businessContent";
 import SideBar from "@/components/sidebar/sidebar";
-<<<<<<< Updated upstream
-import BusinessCardContent from "@/components/pages/businesscard/businessCardContent";
-=======
-import BusinessCardContent from "@/components/pages/businessCard/businessCardContent";
-
->>>>>>> Stashed changes
 
 export default function businessCard() {
   return (
@@ -13,7 +8,7 @@ export default function businessCard() {
       <SideBar />
       <div className="flex flex-col h-full justify-start w-full relative">
         <Navbar title="Business Card" subtitle="" />
-        <BusinessCardContent/>
+        <BusinessContent/>
       </div>
     </div>
   );
