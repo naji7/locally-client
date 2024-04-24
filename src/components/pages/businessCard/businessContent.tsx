@@ -1,8 +1,8 @@
 import React from "react";
-import BusinessCard from "./businessCard";
 import Image from "next/image";
+import BusinessCard from "../../cards/businessCard";
 
-function BusinessCardContent() {
+function BusinessContent() {
   return (
     <div className="flex flex-col items-center justify-between w-full py-14  pl-[1.25rem] xl:pl-[16.75rem] pr-[1.25rem]">
       <div className="flex flex-col items-center">
@@ -34,4 +34,4 @@ function BusinessCardContent() {
   );
 }
 
-export default BusinessCardContent;
+export default BusinessContent;
