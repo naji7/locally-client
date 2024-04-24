@@ -11,7 +11,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange, className
   return (
     <label className={`inline-flex items-center ${className}`}>
       <input
-        type="checkbox"
+        type="radio"
         className="border  rounded-lg  h-6 w-6 text-indigo-600 mr-4"
         checked={checked}
         onChange={onChange}

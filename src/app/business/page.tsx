@@ -1,19 +1,16 @@
-import HomeEffect from "@/components/effects/homeEffect";
 import Navbar from "@/components/navbar/navbar";
-import ActiveContent from "@/components/pages/giveaway/active/activeContent";
 import SideBar from "@/components/sidebar/sidebar";
+import React from "react";
 
-const Active = () => {
+const Business = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
       <div className="flex flex-col h-full justify-start w-full relative">
-        <HomeEffect/>
-        <Navbar title="active giveaways" subtitle="" />
-        <ActiveContent />
+        <Navbar title="business card" subtitle="" />
       </div>
     </div>
   );
 };
 
-export default Active;
+export default Business;

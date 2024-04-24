@@ -48,7 +48,7 @@ const PastContent = () => {
         </div>
       </div>
       <div className="w-full">
-        <Previous title="Giveaways"/>
+        <Previous title="Giveaways" />
       </div>
     </div>
   );
