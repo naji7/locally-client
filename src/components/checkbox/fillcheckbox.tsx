@@ -9,7 +9,7 @@ interface FillCheckboxProps {
 
 const FillCheckbox: React.FC<FillCheckboxProps> = ({ label, checked, onChange, className }) => {
   return (
-    <label className={`inline-flex items-center ${className}`}>
+    <label className={`flex items-start ${className}`}>
       <input
         type="checkbox"
         className="rounded-lg  h-6 w-6  mr-4  "

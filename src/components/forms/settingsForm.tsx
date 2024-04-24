@@ -177,7 +177,7 @@ function SettingsForm() {
         </div>
         <button
           type="submit"
-          className="border text-xs rounded-xl bg-[#FF4C00] text-white w-full py-[21px] px-[24px]"
+          className="border text-xs rounded-xl bg-[#FF4C00] text-white w-full py-[21px] px-[24px] max-w-[15rem]"
         >
           Confirm
         </button>

@@ -1,22 +1,15 @@
 import RegisterCard from "@/components/cards/registerCard";
-import RegisterForm from "@/components/forms/registerForm";
-import RegisterNavBar from "@/components/navbar/registerNavBar";
-import React from "react";
-import Otp from "./otp";
+import RegisterForm from "@/components/forms/register/registerForm";
+import RegisterHeader from "@/components/headers/registerHeader/registerHeader";
 
 function RegisterContent() {
   return (
     <div className="flex flex-col items-between w-full   bg-white relative  ">
-      <div className="bg-[#78DCF8] px-9 w-full h-4/5 absolute">
-        <RegisterNavBar />
+      <div className="bg-[#78DCF8] px-9 w-full row-span-6">
+        <RegisterHeader />
       </div>
-
-      <div className=" absolute top-[56%]  w-full  ">
-        <RegisterCard />
-
-        <div className=" w-full  absolute ">
-          <RegisterForm />
-        </div>
+      <div className="w-full row-span-4 mt-[10rem]">
+        <RegisterForm />
       </div>
     </div>
   );

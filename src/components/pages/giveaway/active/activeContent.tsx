@@ -15,12 +15,12 @@ const ActiveContent = () => {
           className="w-full h-full absolute inset-0 rounded-[1rem] object-contain -z-[2] "
         />
         <Image
-            src={"/assets/images/giveaway/active/main-banner.png"}
-            alt="banner"
-            width={2000}
-            height={2000}
-            className="w-full h-full absolute inset-0 rounded-[1rem] object-cover  -z-[4]"
-          />
+          src={"/assets/images/giveaway/active/main-banner.png"}
+          alt="banner"
+          width={2000}
+          height={2000}
+          className="w-full h-full absolute inset-0 rounded-[1rem] object-cover  -z-[4]"
+        />
         <div className="w-full h-full absolute inset-0 rounded-[1rem] backdrop-blur-xl bg-black/10 -z-[3]"></div>
       </div>
       <div className="grid grid-cols-7 items-start gap-[1.25rem]  w-full">

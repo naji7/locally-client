@@ -1,19 +1,17 @@
-import HomeEffect from "@/components/effects/homeEffect";
 import Navbar from "@/components/navbar/navbar";
-import ActiveContent from "@/components/pages/giveaway/active/activeContent";
+import AffiliateContent from "@/components/pages/affiliate/affiliateContent";
 import SideBar from "@/components/sidebar/sidebar";
 
-const Active = () => {
+const Affiliate = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
       <div className="flex flex-col h-full justify-start w-full relative">
-        <HomeEffect/>
-        <Navbar title="active giveaways" subtitle="" />
-        <ActiveContent />
+        <Navbar title="affiliate" subtitle="" />
+        <AffiliateContent/>
       </div>
     </div>
   );
 };
 
-export default Active;
+export default Affiliate;
