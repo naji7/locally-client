@@ -190,8 +190,8 @@ export default function SideBar() {
                 <span className="navtext">promo tools</span>
               </li>
             </Link>
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/businessCard"}>
+              <li className={`navlist ${isActive("/businessCard") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/business.svg"}
                   alt="navlink"
