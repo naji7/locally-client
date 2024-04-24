@@ -23,7 +23,7 @@ const Balance: React.FC<IBalance> = ({ name, url, amount }) => {
       </div>
       <div className="flex flex-col sm:flex-row items-center justify-between">
         <div className="flex flex-col items-start justify-start gap-1">
-          <div className="flex flex-row items-center justify-between gap-2 ">
+          <div className="flex flex-row items-end justify-between gap-2 ">
             <Image
               src={"/assets/images/settings/earning.svg"}
               width={44}
@@ -31,7 +31,7 @@ const Balance: React.FC<IBalance> = ({ name, url, amount }) => {
               className="w-auto h-auto p-2"
               alt="total earnings"
             />
-            <h3 className="text-xs sm:text-[20px] font-bold">$170.35</h3>
+            <h3 className="text-xs sm:text-[20px] font-bold mb-2">$170.35</h3>
           </div>
           <h3 className="text-[#6B6B6B] text-xs sm:text-base font-normal ">
             Total Earnings
@@ -41,7 +41,7 @@ const Balance: React.FC<IBalance> = ({ name, url, amount }) => {
         <hr className="w-full sm:w-[0.0625rem] bg-black opacity-[0.14] h-[0.1rem] sm:h-[5.625rem] my-[2rem] sm:my-[0rem] mx-0 sm:mx-[3rem]" />
 
         <div className="flex flex-col items-start justify-start gap-1">
-          <div className="flex flex-row items-center justify-between gap-2 ">
+          <div className="flex flex-row items-end justify-between gap-2 ">
             <Image
               src={url}
               width={44}
@@ -49,9 +49,9 @@ const Balance: React.FC<IBalance> = ({ name, url, amount }) => {
               className="w-auto h-auto p-2"
               alt="total Affilates"
             />
-            <h3 className="text-xs sm:text-[20px] font-bold ">{amount}</h3>
+            <h3 className="text-xs sm:text-[20px] font-bold mb-2">{amount}</h3>
           </div>
-          <h3 className="text-[#6B6B6B] text-xs  sm:text-base font-normal ">
+          <h3 className="text-[#6B6B6B] text-xs  sm:text-base font-normal">
             {name}
           </h3>
         </div>

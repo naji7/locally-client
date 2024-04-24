@@ -133,6 +133,71 @@ export const planDetails = [
   },
 ];
 
+export const registerDetails = [
+  {
+    tier: "Platinum",
+    entry: "10",
+    oldEntry: "5",
+    background: "#EFF9FB",
+    main: "#5EC1DC",
+    benefits: [
+      "$49.99 per month 10%",
+      "Referral Commission: 10%",
+      "Partner Store Discounts: 10% - 15%",
+    ],
+  },
+  {
+    tier: "Boomer",
+    entry: "3",
+    oldEntry: "1",
+    background: "#FFF1EF",
+    main: "#FE705C",
+    benefits: [
+      "$19.99 per month",
+      "Referral Commission: 5%",
+      "Partner Store Discounts: 10%",
+    ],
+  },
+  {
+    tier: "Gold",
+    entry: "25",
+    oldEntry: "",
+    hidden: "none",
+    background: "#FFF8E7",
+    main: "#FFBC0B",
+    benefits: [
+      "$100 per month",
+      "Referral Commission: 25%",
+      "Be Eligible to Apply for Winlad GOLD Card",
+    ],
+  },
+  {
+    tier: "Black",
+    entry: "150",
+    oldEntry: "50",
+    background: "#E8E8E9",
+    main: "#1A1D21",
+    benefits: [
+      "$500 per month",
+      "Referral Commission: 50%",
+      "Customized Partner Store discount rates ranging upto 20%",
+    ],
+  },
+  {
+    tier: "Starter",
+    entry: "1",
+    oldEntry: "",
+    hidden: "none",
+    background: "#aed6ff",
+    main: "#296FB8",
+    benefits: [
+      "$9.99 per month",
+      "Referral Commission: 10%",
+      "Partner Store Discounts: 10% - 15%",
+    ],
+  },
+];
+
 export const activentrydata = [
   {
     url: "/assets/images/cards/activeEntry/mystery-box.png",
@@ -176,6 +241,29 @@ export const transactionsHistory = [
     time: "23:45:05",
     price: "170.86",
     method: "stripe",
+  },
+];
+
+export const affiliateList = [
+  {
+    name: "mohammad Reza",
+    email: "mrfarahzad@gmail.com",
+    plan: "Gold",
+  },
+  {
+    name: "mohammad Reza",
+    email: "mrfarahzad@gmail.com",
+    plan: "Gold",
+  },
+  {
+    name: "mohammad Reza",
+    email: "mrfarahzad@gmail.com",
+    plan: "Gold",
+  },
+  {
+    name: "mohammad Reza",
+    email: "mrfarahzad@gmail.com",
+    plan: "Gold",
   },
 ];
 

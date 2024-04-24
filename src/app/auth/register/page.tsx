@@ -1,7 +1,7 @@
 import RegisterContent from "@/components/pages/register/registerContent";
 import React from "react";
 
-function register() {
+function Register() {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <RegisterContent />
@@ -9,4 +9,4 @@ function register() {
   );
 }
 
-export default register;
+export default Register;

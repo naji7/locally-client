@@ -1,17 +1,12 @@
 import EarningBalance from "@/components/cards/earningBalance";
 import Image from "next/image";
-import SubscriptionTabs from "./subscriptionTabs/subscriptionTabs";
+import SubscriptionTabs from "../../tabs/subscription/subscriptionTabs";
+import HomeEffect from "@/components/effects/homeEffect";
 
 export default function SubscriptionContent() {
   return (
     <div className="flex flex-col items-center pl-[1.25rem] xl:pl-[16.75rem] pr-[1.25rem] py-[2rem] w-full ">
-      <Image
-        src={"/assets/images/home/effect.svg"}
-        alt="effect"
-        className="w-auto h-auto absolute top-0 left-[30%]"
-        width={1000}
-        height={1000}
-      />
+      <HomeEffect/>
       <div className="grid grid-cols-6 items-center gap-[1rem] lg:gap-[7.5rem] sm:px-[2rem] 2xl:px-[5rem]">
         <div className="flex  col-span-7 lg:col-span-3 rounded-[1rem] min-h-[20rem] sm:min-h-[28rem] sm:max-h-[28rem] px-[0.75rem] py-4  items-end h-full relative">
           <Image

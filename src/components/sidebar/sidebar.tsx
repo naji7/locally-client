@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function SideBar() {
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(true);
   const pathname = usePathname();
 
   const isActive = (path: any) => {
@@ -166,8 +166,8 @@ export default function SideBar() {
           </ul>
           <hr className="w-10/12 border-[#3A3A3A] my-[2.5rem] mx-auto" />
           <ul className="flex flex-col gap-[1.5rem] w-full px-[1.8rem]">
-            <Link href={"#"}>
-              <li className={`navlist ${isActive("") ? "navActive" : ""}`}>
+            <Link href={"/affiliate"}>
+              <li className={`navlist ${isActive("/affiliate") ? "navActive" : ""}`}>
                 <Image
                   src={"/assets/icons/sidebar/affliate.svg"}
                   alt="navlink"

@@ -5,11 +5,11 @@ const TransactionHistory = () => {
     <div className="flex flex-col items-start gap-[2rem] w-full">
       <h3 className="text-[1.5rem] font-extrabold capitalize">transactions</h3>
       <div className="w-full">
-        <ul className="sm:pl-[1.75rem] flex flex-col gap-[1.5rem] w-full">
+        <ul className="sm:pl-[1.75rem] flex flex-col w-full">
           {transactionsHistory.map((transaction, index) => (
             <li
               key={index}
-              className="flex items-center justify-between w-full transactionList relative"
+              className="flex items-center justify-between w-full transactionList relative py-[1rem] md:py-[1.4rem] border-b"
             >
               <div className="flex flex-col gap-1">
                 <h4 className="font-semibold text-sm sm:text-base capitalize">
