@@ -1,19 +1,41 @@
+"use client"
 import { ChevronLeftIcon } from "@heroicons/react/20/solid";
 import { Bars3CenterLeftIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
+import SideBar from "../sidebar/sidebar";
+import React, { useState } from 'react';
 
 type INavbar = {
   title: string;
   subtitle: string;
 };
 
+
+
 const Navbar: React.FC<INavbar> = ({ title, subtitle }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+const toggleSidebar = () => {
+  setIsSidebarOpen(prevState => !prevState);
+};
+
   return (
     <div className="flex pl-[1.25rem] xl:pl-[13.7rem] w-full mt-[1rem] sm:mt-[2.9rem] min-h-[3.875rem] items-center justify-between pr-[1.25rem]">
-      <button className="xl:hidden flex items-center justify-center p-2">
+      {/* <button className="xl:hidden flex items-center justify-center p-2">
+        <Bars3CenterLeftIcon className="w-8" />
+      </button> */}
+      <button className=" xl:hidden flex items-center justify-center p-2" onClick={toggleSidebar}>
         <Bars3CenterLeftIcon className="w-8" />
       </button>
+
+      {isSidebarOpen && (
+        <div>
+          <SideBar />
+        </div>
+      )}
+
+
       <div className="hidden xl:flex items-center gap-[0.7rem]">
         <div className="flex items-center justify-center bg-white w-[3.375rem] h-[3.375rem] rounded-full z-[99]">
           <button className="flex w-[2.375rem] h-[2.375rem] rounded-full bg-[#6ED9F7]  p-2">
