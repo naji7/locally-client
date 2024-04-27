@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar/navbar";
 import HomeContent from "@/components/pages/home/homeContent";
 import SideBar from "@/components/sidebar/sidebar";
 
-export default function Home() {
+const Home = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
@@ -12,4 +12,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

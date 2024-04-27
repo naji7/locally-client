@@ -3,10 +3,7 @@ import Image from "next/image";
 
 function BusinessCard() {
   return (
-    // <div className="flex flex-col items-center justify-center  bg-[#D9D9D9] bg-opacity-[48%] w-[589px] h-[350px] rotate-[5.158deg] border-0 rounded-3xl relative">
-    <div className="flex flex-col items-center justify-center  bg-[#6ED9F7] max-w-[36.8125rem]  w-full h-full border-0 rounded-3xl relative py-8 sm:py-14 before:w-full before:h-full before:bg-[#d9d9d948] before:absolute before:rotate-[5.158deg] before:-z-[2] before:rounded-3xl">
-      {/* <div className=" bg-[#D9D9D9] bg-opacity-[48%] max-w-[36.8125rem] max-h-[21.875rem] w-full h-full rotate-[5.158deg] border-0 rounded-3xl  absolute top-[px] -z-40"></div> */}
-
+    <div className="flex flex-col items-center justify-center  business-gradient max-w-[36.8125rem]  w-full h-full border-0 rounded-3xl relative py-8 sm:py-14 before:w-full before:h-full before:bg-[#d9d9d948] before:absolute before:rotate-[5.158deg] before:-z-[2] before:rounded-3xl">
       <div className="flex items-center justify-between w-full px-9">
         <Image
           src={"/assets/images/businesscard/logo.svg"}
@@ -44,8 +41,6 @@ function BusinessCard() {
         />
       </div>
     </div>
-
-    // </div>
   );
 }
 

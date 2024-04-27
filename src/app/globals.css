@@ -119,6 +119,10 @@ background: linear-gradient();
   background: linear-gradient(308deg, #ffbe1d 37.31%, #ffdd89 98.03%);
 }
 
+.business-gradient{
+  background: linear-gradient(67deg, #6ED9F7 18.04%, #C5F2FF 90.07%);
+}
+
 .main-banner {
   background: url("/assets/images/giveaway/active/main-banner.png");
   background-size: cover;

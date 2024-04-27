@@ -14,9 +14,9 @@ function Messages() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-between w-full">
+    <div className="flex flex-col items-center justify-between w-full py-5">
       {/* masseges */}
-      <div className="flex flex-col w-full items-center justify-center absolute top-52 gap-10 px-5">
+      <div className="flex flex-col w-full items-center justify-center  gap-10 px-5">
         <div className=" w-full flex items-center justify-center  ">
           <h3 className=" text-xs font-medium border-0 rounded-[3.9rem] px-6 py-2 bg-[#FF4C00] bg-opacity-10">
             Adithya joined
@@ -100,7 +100,7 @@ function Messages() {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center w-full gap-4 absolute -bottom-20">
+      <div className="flex flex-col items-center justify-center w-full gap-4">
         <hr className="w-full border " />
         <div className="flex items-center justify-between w-11/12 h-16 border gap-80 px-4 ">
           <div className="flex items-center justify-start w-full">
