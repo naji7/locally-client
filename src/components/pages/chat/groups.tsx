@@ -13,8 +13,8 @@ function Groups() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full">
-      <div className="flex items-center justify-between border-y w-full h-20 bg-[#C4CDDF] bg-opacity-15 absolute px-7 py-7 top-0 gap-[0.4rem] ">
+    <div className="flex flex-col items-center justify-center w-full ">
+      {/* <div className="flex items-center justify-between border-y w-full h-20 bg-[#C4CDDF] bg-opacity-15 absolute px-7 py-7 top-0 gap-[0.4rem] ">
         <div className="flex items-center justify-center gap-[1.2rem]">
           <Image
             src={"/assets/images/chat/group.svg"}
@@ -32,14 +32,14 @@ function Groups() {
           className=" "
           alt="group search icon"
         />
-      </div>
+      </div> */}
 
 
       {/* chats */}
 
       <div className="flex flex-col items-start justify-start w-full absolute top-20">
         <ul className="flex flex-col  w-full  ">
-          <Link href={"/"}>
+          <Link href={"#"}>
             <div className="flex  items-center justify-start w-full h-[84px] gap-3 px-4 ">
               <Image
                 src={"/assets/images/chat/global chat.svg"}
@@ -57,7 +57,7 @@ function Groups() {
             </div>
           </Link>
 
-          <Link href={"/"}>
+          <Link href={"#"}>
             <div className="flex  items-center justify-start w-full h-[84px] gap-3 px-4 ">
               <Image
                 src={"/assets/images/chat/car.svg"}
@@ -75,7 +75,7 @@ function Groups() {
             </div>
           </Link>
 
-          <Link href={"/"}>
+          <Link href={"#"}>
             <div className="flex  items-center justify-start w-full h-[84px] gap-3 px-4 ">
               <Image
                 src={"/assets/images/chat/global chat.svg"}
@@ -93,7 +93,7 @@ function Groups() {
             </div>
           </Link>
 
-          <Link href={"/"}>
+          <Link href={"#"}>
             <div className="flex  items-center justify-start w-full h-[84px] gap-3 px-4 ">
               <Image
                 src={"/assets/images/chat/car.svg"}

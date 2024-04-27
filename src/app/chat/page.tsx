@@ -4,7 +4,7 @@ import SettingsContent from "@/components/pages/settings/settingsContent";
 import SideBar from "@/components/sidebar/sidebar";
 import React from "react";
 
-function chat() {
+const Chat = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
@@ -14,6 +14,6 @@ function chat() {
       </div>
     </div>
   );
-}
+};
 
-export default chat;
+export default Chat;

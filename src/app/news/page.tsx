@@ -4,7 +4,7 @@ import SettingsContent from '@/components/pages/settings/settingsContent'
 import SideBar from '@/components/sidebar/sidebar'
 import React from 'react'
 
-function news() {
+const News = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
@@ -16,4 +16,4 @@ function news() {
   )
 }
 
-export default news
+export default News

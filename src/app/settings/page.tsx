@@ -2,7 +2,7 @@ import Navbar from "@/components/navbar/navbar";
 import SideBar from "@/components/sidebar/sidebar";
 import SettingsContent from "@/components/pages/settings/settingsContent";
 
-export default function settings() {
+const Settings = () => {
   return (
     <div className="flex h-screen overflow-y-scroll">
       <SideBar />
@@ -13,3 +13,4 @@ export default function settings() {
     </div>
   );
 }
+export default Settings
