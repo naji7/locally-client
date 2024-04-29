@@ -2,7 +2,7 @@
 import SettingsContent from "@/components/pages/settings/settingsContent";
 import MainHeader from "@/components/headers/mainHeader/mainHeader";
 
-export default function settings() {
+const Settings = () => {
   return (
     // <div className="flex h-screen overflow-y-scroll">
     //   <SideBar />
@@ -17,3 +17,4 @@ export default function settings() {
     </div>
   );
 }
+export default Settings

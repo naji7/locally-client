@@ -2,7 +2,7 @@ import MainHeader from "@/components/headers/mainHeader/mainHeader";
 import ChatContent from "@/components/pages/chat/chatContent";
 import React from "react";
 
-function chat() {
+const Chat = () => {
   return (
     // <div className="flex h-screen overflow-y-scroll">
     //   <SideBar />
@@ -16,6 +16,6 @@ function chat() {
       <ChatContent />
     </div>
   );
-}
+};
 
-export default chat;
+export default Chat;

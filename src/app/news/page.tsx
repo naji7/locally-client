@@ -2,7 +2,7 @@ import MainHeader from '@/components/headers/mainHeader/mainHeader'
 import NewsContent from '@/components/pages/news/newsContent'
 import React from 'react'
 
-function news() {
+const News = () => {
   return (
     // <div className="flex h-screen overflow-y-scroll">
     //   <SideBar />
@@ -18,4 +18,4 @@ function news() {
   )
 }
 
-export default news
+export default News
