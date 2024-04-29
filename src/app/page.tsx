@@ -1,15 +1,11 @@
-import Navbar from "@/components/navbar/navbar";
+import MainHeader from "@/components/headers/mainHeader/mainHeader";
 import HomeContent from "@/components/pages/home/homeContent";
-import SideBar from "@/components/sidebar/sidebar";
 
 const Home = () => {
   return (
-    <div className="flex h-screen overflow-y-scroll">
-      <SideBar />
-      <div className="flex flex-col h-full justify-start w-full relative">
-        <Navbar title="welcome back !" subtitle="Mohammad Reza" />
-        <HomeContent />
-      </div>
+    <div className="flex h-screen flex-col overflow-y-scroll relative">
+      <MainHeader title="welcome back !" subtitle="Mohammad Reza" />
+      <HomeContent />
     </div>
   );
 };

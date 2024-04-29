@@ -1,6 +1,4 @@
 import ChatForm from "@/components/pages/chat/chatForm";
-import React from "react";
-import Groups from "./groups";
 import Messages from "./messages";
 import GroupSidebar from "./groupSidebar/groupSidebar";
 
