@@ -3,14 +3,10 @@ import Image from "next/image";
 import Checkbox from "../../checkbox/checkbox";
 import React, { useState } from "react";
 import FillCheckbox from "../../checkbox/fillcheckbox";
+import { useMembership } from "@/providers/membershipProvider";
 
 const RegisterMembership = () => {
-  const [isChecked, setIsChecked] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-
-  const handleCheckboxChange = (data: any) => {
-    setIsChecked(data.target.checked);
-  };
+  const { setMembershipType, membershipType }: any = useMembership();
 
   return (
     <div className="flex items-center justify-center h-full w-full">
@@ -26,6 +22,8 @@ const RegisterMembership = () => {
               type="radio"
               name="register"
               className="sr-only z-[1]"
+              checked={membershipType === "otp"}
+              onChange={(e: any) => setMembershipType(e.target.id)}
             />
             <span className="text-xs font-medium ml-8 mt-0.5">
               On Time Payment
@@ -43,6 +41,8 @@ const RegisterMembership = () => {
               type="radio"
               name="register"
               className="sr-only"
+              checked={membershipType === "subscription"}
+              onChange={(e: any) => setMembershipType(e.target.id)}
             />
             <span className="text-xs font-medium ml-8 mt-0.5 overflow-x-scroll max-w-[80%] text-nowrap">
               Subscription (most popular accumulating entries)

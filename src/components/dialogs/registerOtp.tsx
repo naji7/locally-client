@@ -55,8 +55,12 @@ const RegisterOtp = ({ show, setter }: any) => {
                           height={500}
                           className="max-w-[4rem] w-full h-auto"
                         />
-                        <span className="text-xs font-light">Didn&apos;t receive an email?</span>
-                        <button className="bg-[#78DCF8] text-sm py-2 px-4 rounded-2xl min-w-[7rem]">Resend</button>
+                        <span className="text-xs font-light">
+                          Didn&apos;t receive an email?
+                        </span>
+                        <button className="bg-[#78DCF8] text-sm py-2 px-4 rounded-2xl min-w-[7rem]">
+                          Resend
+                        </button>
                       </div>
                     </div>
                   </div>
