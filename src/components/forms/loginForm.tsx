@@ -1,12 +1,16 @@
 "use client";
 
+import { loginApi } from "@/clientApi/auth";
 import {
   AtSymbolIcon,
   EyeIcon,
   LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { enqueueSnackbar } from "notistack";
 import { useForm } from "react-hook-form";
+import ButtonLoader from "../loader/ButtonLoader";
+import { useState } from "react";
 
 interface ILogin {
   email: string;
@@ -19,7 +23,33 @@ const LoginForm = () => {
     formState: { errors },
     handleSubmit,
   } = useForm<ILogin>();
-  const onSubmit = (data: any) => console.log(data);
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onSubmit = async (data: any) => {
+    setIsLoading(true);
+    try {
+      const loginResponse = await loginApi(data);
+      if (loginResponse.status === 200) {
+        const tk = loginResponse.data.token;
+        enqueueSnackbar(`Access Granted: Successfully Logged In!`, {
+          variant: "success",
+        });
+      }
+    } catch (error: any) {
+      if (error?.response?.data?.message) {
+        enqueueSnackbar(`${error?.response?.data?.message}`, {
+          variant: "error",
+        });
+      } else {
+        enqueueSnackbar(`Something went wrong!`, {
+          variant: "error",
+        });
+      }
+    }
+
+    setIsLoading(false);
+  };
 
   return (
     <div className="flex flex-col items-center max-w-[31.875rem] mx-auto justify-center w-full">
@@ -67,12 +97,12 @@ const LoginForm = () => {
           type="submit"
           className="flex items-center bg-[#FF4C00] rounded-[1rem] w-full py-[1.3125rem] justify-center text-white mt-[3rem] sm:mt-[4rem] text-sm sm:text-base"
         >
-          Login
+          {isLoading ? <ButtonLoader /> : "Login"}
         </button>
       </form>
       <div className="flex items-center justify-center text-xs sm:text-sm gap-1 mt-[2rem]">
         New Member ?
-        <Link href={"/auth/register"} className="text-[#FF4C00] font-bold ">
+        <Link href={"/register"} className="text-[#FF4C00] font-bold ">
           Register now
         </Link>
       </div>

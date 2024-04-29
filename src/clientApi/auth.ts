@@ -1,5 +1,13 @@
 import { axiosInstance } from "@/services/axios";
 
+export const loginApi = async (formData: any) => {
+  const res = await axiosInstance(`/login`, {
+    method: "POST",
+    data: formData,
+  });
+  return res;
+};
+
 export const registerUserApi = async (formData: any) => {
   const res = await axiosInstance("/register", {
     method: "POST",

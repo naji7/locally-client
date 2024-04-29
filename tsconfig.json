@@ -28,7 +28,8 @@
     ".next/types/**/*.ts",
     "src/providers/UserProvider.js",
     "src/providers/membershipProvider.ts",
-    "src/providers/membershipProvider.js"
+    "src/providers/membershipProvider.js",
+    "src/providers/notistackProvider.jsx"
   ],
   "exclude": ["node_modules"]
 }

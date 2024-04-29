@@ -2,17 +2,17 @@
 
 import { SnackbarProvider } from "notistack";
 
-export default function NotistackProvider({ children }) {
+export default function NotistackProvider({ children }: any) {
   return (
     <SnackbarProvider
       classes={{
         containerAnchorOriginTopCenter: "z-alert",
       }}
-      maxSnack={1}
+      maxSnack={3}
       preventDuplicate
       anchorOrigin={{
-        vertical: "bottom",
-        horizontal: "left",
+        vertical: "top",
+        horizontal: "right",
       }}
       autoHideDuration={3000}
     >

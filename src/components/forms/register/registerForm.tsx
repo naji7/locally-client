@@ -268,10 +268,7 @@ function RegisterForm() {
         <div className="flex item-center justify-center w-full h-[65px] border bg-[#c4cddf10] bg-opacity-25">
           <h3 className="py-5 text-sm font-normal flex items-center gap-1">
             Already a member ?
-            <Link
-              href={"/auth/login"}
-              className="text-sm font-bold text-[#FF4C00]"
-            >
+            <Link href={"/login"} className="text-sm font-bold text-[#FF4C00]">
               login now
             </Link>
           </h3>
