@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Groupchart from "./groupchart";
+import ChatTab from "@/components/tabs/chattab/chattab";
 
 function GroupBody() {
   return (
@@ -19,7 +19,7 @@ function GroupBody() {
         </div>
       </div>
       <div className="flex items-center justify-start w-full px-5  ">
-        <Groupchart/>
+        <ChatTab/>
       </div>
     </div>
   );

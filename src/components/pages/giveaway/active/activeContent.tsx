@@ -4,7 +4,7 @@ const ActiveContent = () => {
   return (
     <div className="flex flex-col items-center pl-[2.5rem] xl:pl-[17.75rem] pr-[2.5rem] py-[2rem] w-full relative gap-[1.75rem]">
       <div className="flex rounded-[1rem] w-full h-[22.125rem] relative">
-        <button className="bg-[#FF4C00] border-4 border-white rounded-[1rem] py-[2rem] max-w-[28.25rem] w-full capitalize font-extrabold text-white absolute left-0 bottom-0 z-[99]">
+        <button className="bg-[#FF4C00] border-4 border-white rounded-[1rem] py-[2rem] max-w-[28.25rem] w-full capitalize font-extrabold text-white absolute left-0 bottom-0 z-[90]">
           enter now
         </button>
         <Image

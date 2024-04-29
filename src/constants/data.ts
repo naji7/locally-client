@@ -301,3 +301,31 @@ export const newsData = [
     likes: "51",
   },
 ];
+
+export const chatList = [
+  {
+    member: "member1 ",
+    photos: "photos 1",
+    videos: "video 1",
+    doc:"doc 1"
+  },
+  {
+    member: "member2 ",
+    photos: "photos 2",
+    videos: "video 2",
+    doc:"doc 2"
+  },
+  {
+    member: "member3 ",
+    photos: "photos 3",
+    videos: "video 3",
+    doc:"doc 3"
+  },
+  {
+    member: "member4 ",
+    photos: "photos 4",
+    videos: "video 4",
+    doc:"doc 4",
+  },
+];
+
