@@ -4,13 +4,7 @@ import React from 'react'
 
 const News = () => {
   return (
-    // <div className="flex h-screen overflow-y-scroll">
-    //   <SideBar />
-    //   <div className="flex flex-col h-full justify-start w-full relative">
-    //     <Navbar title="News" subtitle="" />
-    //     <NewsContent/>
-    //   </div>
-    // </div>
+   
          <div className="flex h-screen flex-col overflow-y-scroll relative">
          <MainHeader title="News"  />
          <NewsContent />
