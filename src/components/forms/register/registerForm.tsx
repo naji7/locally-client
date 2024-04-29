@@ -1,12 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { enqueueSnackbar } from "notistack";
+import { set, useForm } from "react-hook-form";
+
 import RegisterMembership from "./registermembership";
 import { CheckIcon } from "@heroicons/react/20/solid";
-import { set, useForm } from "react-hook-form";
 import RegisterOtp from "@/components/dialogs/registerOtp";
-import { useState } from "react";
+import { registerUserApi, sendOTPApi } from "@/clientApi/auth";
+import { useMembership } from "@/providers/membershipProvider";
+import ButtonLoader from "@/components/loader/ButtonLoader";
 
 interface IRegister {
   fullName: string;
@@ -18,19 +24,77 @@ interface IRegister {
 }
 
 function RegisterForm() {
+  const { selectedPlan, durationType }: any = useMembership();
+  const [isOtpSent, setIsOtpSent] = useState(false);
+  const [isloading, setIsLoading] = useState(false);
+  const [isChecked, setIsChecked] = useState(false);
   const {
     register,
     formState: { errors },
     handleSubmit,
   } = useForm<IRegister>();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = async (data: any) => {
+    // data.preventDefault();
+
+    setIsLoading(true);
+
+    if (Object.keys(selectedPlan).length !== 0) {
+      if (!isOtpSent) {
+        try {
+          const otpRes = await sendOTPApi({ email: data.email });
+          if (otpRes) {
+            setOpen(true);
+            setIsOtpSent(true);
+          }
+        } catch (error) {
+          enqueueSnackbar(`Couldn't send OTP`, {
+            variant: "error",
+          });
+        }
+      } else {
+        const payload = {
+          fullName: data.fullName,
+          teleNo: data.tel,
+          password: data.password,
+          email: data.email,
+          affiliateId: data.affiliateid,
+          durationType: durationType,
+          subId: selectedPlan.id,
+        };
+
+        try {
+          const regResponse = await registerUserApi(payload);
+          if (regResponse) {
+            enqueueSnackbar(`User register successfully`, {
+              variant: "success",
+            });
+          }
+        } catch (error: any) {
+          if (error?.response?.data) {
+            enqueueSnackbar(error?.response?.data, {
+              variant: "error",
+            });
+          } else {
+            enqueueSnackbar(`Couldn't register user`, {
+              variant: "error",
+            });
+          }
+        }
+      }
+    } else {
+      enqueueSnackbar(`Please select a plan!`, {
+        variant: "error",
+      });
+    }
+
+    setIsLoading(false);
+  };
 
   const [open, setOpen] = useState(false);
 
   const onClose = () => {
-    setOpen(!open)
-  }
-  
+    setOpen(!open);
+  };
 
   return (
     <>
@@ -40,7 +104,8 @@ function RegisterForm() {
             {/* user info */}
 
             <form
-              onSubmit={onSubmit}
+              // id="reg-form"
+              // onSubmit={onSubmit}
               className="flex flex-col items-start justify-center w-full gap-4 lg:basis-[33%]"
             >
               <h3 className="text-sm font-bold">User Info</h3>
@@ -162,6 +227,9 @@ function RegisterForm() {
                   type="checkbox"
                   name="agree"
                   className="sr-only z-[1]"
+                  onChange={() => {
+                    setIsChecked(!isChecked);
+                  }}
                 />
                 <label
                   htmlFor="agree"
@@ -175,12 +243,23 @@ function RegisterForm() {
                   By checking the box you agree to our Terms of use
                 </span>
               </div>
+
               <button
-                onClick={() => setOpen(true)}
-                className="py-5 border rounded-2xl bg-[#FF4C00] w-full lg:basis-[64%]"
+                disabled={!isChecked}
+                type="submit"
+                onClick={handleSubmit((d) => onSubmit(d))}
+                className={`py-5 border rounded-2xl bg-[#FF4C00] ${
+                  !isChecked && "bg-[#a0aec0]"
+                } w-full lg:basis-[64%]`}
               >
-                <span className="text-xs font-semibold text-white">
-                  Get OTP
+                <span className="text-xs font-semibold text-white items-center">
+                  {isloading ? (
+                    <ButtonLoader />
+                  ) : isOtpSent ? (
+                    "Register"
+                  ) : (
+                    "Get OTP"
+                  )}
                 </span>
               </button>
             </div>
