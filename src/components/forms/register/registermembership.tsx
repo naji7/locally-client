@@ -6,7 +6,10 @@ import FillCheckbox from "../../checkbox/fillcheckbox";
 import { useMembership } from "@/providers/membershipProvider";
 
 const RegisterMembership = () => {
-  const { setMembershipType, membershipType }: any = useMembership();
+  const { setMembershipType, membershipType, selectedPlan }: any =
+    useMembership();
+
+  console.log("selcetedd : ", selectedPlan);
 
   return (
     <div className="flex items-center justify-center h-full w-full">
@@ -59,7 +62,7 @@ const RegisterMembership = () => {
         <h3 className=" text-sm font-bold">Amount</h3>
         <div className="flex items-center justify-between w-full relative ">
           <h4 className=" text-sm font-light">Tier</h4>
-          <p className=" text-sm font-light ">0 $</p>
+          <p className=" text-sm font-light ">{selectedPlan ? "" : "0 $"}</p>
         </div>
         <hr className="border w-[30%] border-dashed justify-end items-end flex ml-auto" />
         <div className="flex items-center justify-between w-full">

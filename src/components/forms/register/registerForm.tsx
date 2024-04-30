@@ -13,6 +13,7 @@ import RegisterOtp from "@/components/dialogs/registerOtp";
 import { registerUserApi, sendOTPApi } from "@/clientApi/auth";
 import { useMembership } from "@/providers/membershipProvider";
 import ButtonLoader from "@/components/loader/ButtonLoader";
+import { AUTH_TOKEN } from "@/constants";
 
 interface IRegister {
   fullName: string;
@@ -65,6 +66,8 @@ function RegisterForm() {
         try {
           const regResponse = await registerUserApi(payload);
           if (regResponse) {
+            const tk = regResponse.data.token;
+            localStorage.setItem(AUTH_TOKEN, tk);
             enqueueSnackbar(`User register successfully`, {
               variant: "success",
             });
