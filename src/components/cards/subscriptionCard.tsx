@@ -81,16 +81,21 @@ function SubscriptionCard({ item, index, handleClick }: any) {
         </ul>
       </div>
       <div className="flex flex-col items-center w-full justify-items-end gap-2">
-        <button className="bg-white/50 rounded-lg py-[0.75rem] flex items-center justify-center text-sm font-normal capitalize flex-shrink-0 w-full">
+        {/* <button className="bg-white/50 rounded-lg py-[0.75rem] flex items-center justify-center text-sm font-normal capitalize flex-shrink-0 w-full">
           view more...
-        </button>
+        </button> */}
         <button
-          className="bg-[#5EC1DC] text-white rounded-lg py-[0.75rem] flex items-center justify-center text-sm font-normal uppercase flex-shrink-0 w-full"
+          className="bg-[#5EC1DC] text-white py-[0.75rem] flex items-center justify-center text-sm font-normal uppercase flex-shrink-0 w-full rounded-[0.5rem]"
           style={{ backgroundColor: item.main }}
           onClick={() => handleClick(item)}
         >
           CHOOSE PLAN
         </button>
+      </div>
+      <div className="hidden items-center justify-center absolute inset-0 rounded-[1rem] bg-black/10 backdrop-blur-sm">
+        <span className="text-base font-bold" style={{ color: item.main }}>
+          Selected
+        </span>
       </div>
     </div>
   );
