@@ -64,7 +64,7 @@ export default function RegisterTabs() {
   );
 }
 const Subscription = ({ subscriptions }: any) => {
-  const { setSelectedPlan }: any = useMembership();
+  const { setSelectedPlan, selectedPlan }: any = useMembership();
 
   const handleClick = (data: any) => {
     setSelectedPlan(data);
@@ -79,6 +79,7 @@ const Subscription = ({ subscriptions }: any) => {
               key={index}
               item={item}
               index={index}
+              selectedPlan={selectedPlan}
               handleClick={handleClick}
             />
           ))}

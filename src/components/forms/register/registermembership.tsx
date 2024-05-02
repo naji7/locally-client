@@ -4,17 +4,30 @@ import Checkbox from "../../checkbox/checkbox";
 import React, { useState } from "react";
 import FillCheckbox from "../../checkbox/fillcheckbox";
 import { useMembership } from "@/providers/membershipProvider";
+import { Duration } from "@/constants";
 
 const RegisterMembership = () => {
-  const { setMembershipType, membershipType, selectedPlan }: any =
-    useMembership();
+  const { selectedPlan, durationType }: any = useMembership();
 
-  console.log("selcetedd : ", selectedPlan);
+  let tier = "0";
+
+  if (Object.keys(selectedPlan).length !== 0) {
+    tier =
+      durationType === Duration.MONTH
+        ? selectedPlan.monthlyPrice
+        : durationType === Duration.QUART
+        ? selectedPlan.semiAnnualPrice
+        : durationType === Duration.YEAR
+        ? selectedPlan.annualPrice
+        : "0";
+  } else {
+    tier = "0";
+  }
 
   return (
     <div className="flex items-center justify-center h-full w-full">
       <div className="flex flex-col items-start justify-between w-full gap-[1.88rem] ">
-        <h3 className=" text-sm font-bold">Membership Types</h3>
+        {/* <h3 className=" text-sm font-bold">Membership Types</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center justify-center w-full gap-[1.5rem]">
           <button
             id="type-btn"
@@ -58,16 +71,16 @@ const RegisterMembership = () => {
             <div className="absolute inset-0 bg-[#fff] rounded-2xl -z-[2] overlay border border-black/10"></div>
           </button>
         </div>
-        <hr className="w-full" />
+        <hr className="w-full" /> */}
         <h3 className=" text-sm font-bold">Amount</h3>
         <div className="flex items-center justify-between w-full relative ">
           <h4 className=" text-sm font-light">Tier</h4>
-          <p className=" text-sm font-light ">{selectedPlan ? "" : "0 $"}</p>
+          <p className=" text-sm font-light ">{`${tier} $`}</p>
         </div>
         <hr className="border w-[30%] border-dashed justify-end items-end flex ml-auto" />
         <div className="flex items-center justify-between w-full">
           <h4 className=" text-sm font-bold">Order Total</h4>
-          <p className=" text-sm font-bold">0 $</p>
+          <p className=" text-sm font-bold">{`${tier} $`}</p>
         </div>
         <hr className="w-full" />
         <h3 className=" text-sm font-bold">Payment Method</h3>

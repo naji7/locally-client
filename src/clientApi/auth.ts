@@ -30,3 +30,11 @@ export const sendOTPApi = async (email: any) => {
   });
   return res;
 };
+
+export const verifyOTPApi = async (formData: any) => {
+  const res = await axiosInstance("/verifyOtp", {
+    method: "POST",
+    data: formData,
+  });
+  return res;
+};
