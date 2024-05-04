@@ -8,8 +8,24 @@ export const loginApi = async (formData: any) => {
   return res;
 };
 
+export const authenticateUserApi = async () => {
+  const res = await axiosInstance(`/authenticate`, {
+    method: "GET",
+  });
+
+  return res;
+};
+
 export const registerUserApi = async (formData: any) => {
   const res = await axiosInstance("/register", {
+    method: "POST",
+    data: formData,
+  });
+  return res;
+};
+
+export const registerWithStripeApi = async (formData: any) => {
+  const res = await axiosInstance("/registerWithStripe", {
     method: "POST",
     data: formData,
   });

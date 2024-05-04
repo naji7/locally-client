@@ -1,5 +1,6 @@
 "use client";
 
+import { useUser } from "@/providers/UserProvider";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function SideBar({ show, setter }: any) {
+  const { user }: any = useUser();
   const [showDropdown, setShowDropdown] = useState(true);
   const pathname = usePathname();
 
@@ -50,8 +52,8 @@ export default function SideBar({ show, setter }: any) {
                 </div>
               </div>
             </div>
-            <h3 className="text-sm leading-6 font-semibold text-white">
-              Mohammad Reza
+            <h3 className="text-sm leading-6 font-semibold text-white capitalize">
+              {user && user?.fullName}
             </h3>
           </div>
           <div className="w-full ">

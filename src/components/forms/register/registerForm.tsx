@@ -9,7 +9,11 @@ import { set, useForm } from "react-hook-form";
 import RegisterMembership from "./registermembership";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import RegisterOtp from "@/components/dialogs/register/registerOtp";
-import { registerUserApi, sendOTPApi } from "@/clientApi/auth";
+import {
+  registerUserApi,
+  registerWithStripeApi,
+  sendOTPApi,
+} from "@/clientApi/auth";
 import { useMembership } from "@/providers/membershipProvider";
 import ButtonLoader from "@/components/loader/ButtonLoader";
 import { AUTH_TOKEN } from "@/constants";
@@ -64,13 +68,16 @@ function RegisterForm() {
           affiliateId: data.affiliateid,
           durationType: durationType,
           subId: selectedPlan.id,
+          coupen: "aaaaaf",
+          fivex: 0,
         };
 
         try {
-          const regResponse = await registerUserApi(payload);
+          const regResponse = await registerWithStripeApi(payload);
           if (regResponse) {
             const tk = regResponse.data.token;
             localStorage.setItem(AUTH_TOKEN, tk);
+            window.location.href = regResponse.data?.payurl;
             enqueueSnackbar(`User register successfully`, {
               variant: "success",
             });

@@ -1,7 +1,10 @@
 "use client";
-import { cn } from "@/utils/cn";
+
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+
+import { cn } from "@/utils/cn";
 
 export const SliderContent = ({
   images,
@@ -136,16 +139,18 @@ export const SliderContent = ({
       }}
     >
       {areImagesLoaded && children} (
-        <div
-          className={cn("absolute inset-0 bg-black/20 backdrop-blur-md", overlayClassName)}
-        />
+      <div
+        className={cn(
+          "absolute inset-0 bg-black/20 backdrop-blur-md",
+          overlayClassName
+        )}
+      />
       )
       {areImagesLoaded && overlay && (
         <div
           className={cn("absolute inset-0 bg-black/5 z-40", overlayClassName)}
         />
       )}
-
       {areImagesLoaded && (
         <AnimatePresence>
           <div className="flex items-center justify-end">
@@ -182,11 +187,14 @@ export const SliderContent = ({
                   get 5x entries
                 </span>
               </button>
-              <button className="py-[1rem] px-[2.75rem] flex items-center justify-center backdrop-blur-sm  bg-[#FF4D00]  text-white  text-center rounded-[0.5rem] relative w-full">
-                <span className="text-sm capitalize font-semibold">
-                  upgrade subscription
-                </span>
-              </button>
+
+              <div className="py-[1rem] px-[2.75rem] flex items-center justify-center backdrop-blur-sm  bg-[#FF4D00]  text-white  text-center rounded-[0.5rem] relative w-full">
+                <Link href={"/subscription"}>
+                  <span className="text-sm capitalize font-semibold">
+                    upgrade subscription
+                  </span>
+                </Link>
+              </div>
             </motion.div>
           </div>
         </AnimatePresence>

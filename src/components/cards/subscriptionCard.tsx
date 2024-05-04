@@ -1,8 +1,20 @@
 import React from "react";
 
 import { CheckIcon } from "@heroicons/react/24/outline";
+import { useMembership } from "@/providers/membershipProvider";
+import { Duration } from "@/constants";
 
-function SubscriptionCard({ item, index, handleClick, selectedPlan }: any) {
+function SubscriptionCard({
+  item,
+  index,
+  handleClick,
+  selectedPlan,
+  isDashboard,
+}: any) {
+  console.log("item : ", item);
+  console.log("selectedPlan : ", selectedPlan);
+  const { durationType }: any = useMembership();
+
   // const boldNumbers = (text: string) => {
   //   const parts = text.split(/(\$[\d.]+|%[\d.-]+)/g);
   //   const elements = parts.map((part, index) => {
@@ -18,6 +30,15 @@ function SubscriptionCard({ item, index, handleClick, selectedPlan }: any) {
   //   });
   //   return elements;
   // };
+
+  let tierPrice =
+    durationType === Duration.MONTH
+      ? `$ ${item.monthlyPrice} Per Month`
+      : durationType === Duration.QUART
+      ? `$ ${item.semiAnnualPrice} Per Quart`
+      : durationType === Duration.YEAR
+      ? `$ ${item.annualPrice} Per Year`
+      : "0";
 
   return (
     <div
@@ -60,6 +81,13 @@ function SubscriptionCard({ item, index, handleClick, selectedPlan }: any) {
           accumulating entries
         </div>
         <ul className="flex flex-col items-start gap-2 mt-[0.2rem]">
+          <li
+            key={index}
+            className="flex items-start gap-2 text-[0.875rem] font-medium"
+          >
+            <CheckIcon className="w-[1.125rem] h-[1.125rem] text-green-400 flex-shrink-0" />
+            <div className="flex items-center gap-1 font-bold">{tierPrice}</div>
+          </li>
           {item.features &&
             item.features.map((item: string, index: any) => {
               return (
@@ -79,25 +107,34 @@ function SubscriptionCard({ item, index, handleClick, selectedPlan }: any) {
           view more...
         </button> */}
         <button
+          disabled={isDashboard && selectedPlan?.id !== item.id}
           className="bg-[#5EC1DC] text-white py-[0.75rem] flex items-center justify-center text-sm font-normal uppercase flex-shrink-0 w-full rounded-[0.5rem]"
           style={{ backgroundColor: item.main }}
           onClick={() => handleClick(item)}
         >
-          CHOOSE PLAN
+          {isDashboard
+            ? selectedPlan?.id === item.id
+              ? "UNSUBSCRIBE"
+              : "CHOOSE PLAN"
+            : "CHOOSE PLAN"}
         </button>
       </div>
-      <div
-        className={`${
-          selectedPlan === item ? "flex" : "hidden"
-        } items-end justify-center h-full absolute inset-0 rounded-[1rem]  backdrop-blur-[1.2px] pt-[2rem] pb-[1rem]`}
-      >
-        <span
-          className="text-sm font-bold text-white  w-full py-[0.75rem] flex items-center justify-center"
-          style={{ backgroundColor: item.main }}
-        >
-          Selected
-        </span>
-      </div>
+      {!isDashboard && (
+        <>
+          <div
+            className={`${
+              selectedPlan === item ? "flex" : "hidden"
+            } items-end justify-center h-full absolute inset-0 rounded-[1rem]  backdrop-blur-[1.2px] pt-[2rem] pb-[1rem]`}
+          >
+            <span
+              className="text-sm font-bold text-white  w-full py-[0.75rem] flex items-center justify-center"
+              style={{ backgroundColor: item.main }}
+            >
+              Selected
+            </span>
+          </div>
+        </>
+      )}
     </div>
   );
 }

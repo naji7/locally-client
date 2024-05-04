@@ -1,6 +1,45 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+import { setToken } from "@/services/axios";
+import { AUTH_TOKEN } from "@/constants";
+
 const SubscribeSuccessful = () => {
+  const router = useRouter();
+  const [seconds, setSeconds] = useState(5);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const searchParams = new URLSearchParams(location.search);
+  const token = searchParams.get("token");
+
+  useEffect(() => {
+    if (token) {
+      setIsSuccess(true);
+      const intervalId = setInterval(() => {
+        setSeconds((prev) => {
+          // Ensure that the countdown stops at 0
+          if (prev <= 1) {
+            localStorage.setItem(AUTH_TOKEN, token);
+            setToken(token);
+            clearInterval(intervalId);
+            router.push("/");
+            return 0;
+          }
+          return prev - 1;
+        });
+      }, 1000);
+      return () => {
+        // Clear the interval when the component unmounts
+        clearInterval(intervalId);
+      };
+    } else {
+      setIsSuccess(false);
+    }
+  }, []);
+
   return (
     <div className="w-full h-screen bg-white flex items-center justify-center px-5 sm:px-10">
       <div className="flex flex-col items-center w-full max-w-[40rem]">
@@ -16,10 +55,10 @@ const SubscribeSuccessful = () => {
             <div className="bg-[#5CFE89] w-[0.3125rem] h-full min-h-[2.5rem] rounded-[1.5rem]"></div>
             <div className="flex flex-col items-start justify-center h-full mt-1">
               <h4 className="text-[0.575rem] sm:text-[0.875rem] text-black font-medium capitalize text-nowrap max-w-[15rem]">
-                you will redirected to the dashboard after 1
+                {`you will redirected to the dashboard after ${seconds}`}
               </h4>
               <h2 className="text-[1rem] sm:text-[1.875rem] text-black font-extrabold capitalize">
-                Subscription Successful
+                {isSuccess ? "Subscription Successful !" : "Subscription Fail"}
               </h2>
             </div>
           </div>

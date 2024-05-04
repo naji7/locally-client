@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { MembershipProvider } from "@/providers/membershipProvider";
 import NotistackProvider from "@/providers/notistackProvider";
+import { UserProvider } from "@/providers/UserProvider";
 
 export const metadata: Metadata = {
   title: "Winlads",
@@ -18,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <MembershipProvider>
-          <NotistackProvider> {children}</NotistackProvider>
+          <UserProvider>
+            <NotistackProvider> {children}</NotistackProvider>
+          </UserProvider>
         </MembershipProvider>
       </body>
     </html>
