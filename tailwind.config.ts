@@ -79,7 +79,7 @@ const config = {
       "caret-blink": "caret-blink 1.25s ease-out infinite",
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("daisyui")],
 } satisfies Config;
 
 export default config;

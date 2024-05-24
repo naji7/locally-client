@@ -9,12 +9,10 @@ import React, { useState } from "react";
 type INavbar = {
   title: string;
   subtitle: string;
-  setter : any
+  setter: any;
 };
 
-const Navbar: React.FC<INavbar> = ({ title, subtitle , setter}) => {
-
-
+const Navbar: React.FC<INavbar> = ({ title, subtitle, setter }) => {
   return (
     <div className="flex pl-[1.25rem] xl:pl-[13.7rem] w-full mt-[1rem] sm:mt-[2.9rem] min-h-[3.875rem] items-center justify-between pr-[1.25rem]">
       {/* <button className="xl:hidden flex items-center justify-center p-2">
@@ -27,10 +25,9 @@ const Navbar: React.FC<INavbar> = ({ title, subtitle , setter}) => {
         <Bars3CenterLeftIcon className="w-8" />
       </button>
 
-
       <div className="hidden xl:flex items-center gap-[0.7rem]">
         <div className="flex items-center justify-center bg-white w-[3.375rem] h-[3.375rem] rounded-full z-[99]">
-          <button className="flex w-[2.375rem] h-[2.375rem] rounded-full bg-[#6ED9F7]  p-2">
+          <button className="flex w-[2.375rem] h-[2.375rem] rounded-full bg-[#FF4C00]  p-2">
             <ChevronLeftIcon />
           </button>
         </div>
@@ -43,20 +40,6 @@ const Navbar: React.FC<INavbar> = ({ title, subtitle , setter}) => {
         </div>
       </div>
       <div className="flex items-center gap-4 md:gap-6 lg:gap-8">
-        <ul className="hidden sm:flex items-center">
-          <Link href={"#"}>
-            <li className="text-sm capitalize font-normal">be a partner</li>
-          </Link>
-          <div className="w-[0.0625rem] h-[1.3125rem] bg-[#EBEBEB] mx-[1.94rem]"></div>
-          <Link href={"#"}>
-            <li className="text-sm capitalize font-normal">our partners</li>
-          </Link>
-          <div className="w-[0.0625rem] h-[1.3125rem] bg-[#EBEBEB] mx-[1.94rem]"></div>
-
-          <Link href={"#"}>
-            <li className="text-sm capitalize font-normal">FAQ</li>
-          </Link>
-        </ul>
         <div className="relative flex">
           <button className="flex items-center justify-center bg-[#F5F5F5] w-[3.75rem] h-[3.75rem] rounded-full">
             <Image

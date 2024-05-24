@@ -16,6 +16,15 @@ export const authenticateUserApi = async () => {
   return res;
 };
 
+export const getStoreProductsApi = async (formData: any) => {
+  const res = await axiosInstance(`/getStoreProducts`, {
+    method: "POST",
+    data: formData,
+  });
+
+  return res;
+};
+
 export const registerUserApi = async (formData: any) => {
   const res = await axiosInstance("/register", {
     method: "POST",
@@ -24,33 +33,26 @@ export const registerUserApi = async (formData: any) => {
   return res;
 };
 
-export const registerWithStripeApi = async (formData: any) => {
-  const res = await axiosInstance("/registerWithStripe", {
+export const addProductApi = async (formData: any) => {
+  const res = await axiosInstance("/products", {
     method: "POST",
     data: formData,
   });
   return res;
 };
 
-export const getAllSubscriptionsApi = async () => {
-  const res = await axiosInstance(`/subscription`, {
+export const createStoreApi = async (formData: any) => {
+  const res = await axiosInstance("/store", {
+    method: "POST",
+    data: formData,
+  });
+  return res;
+};
+
+export const getAllProductsApi = async () => {
+  const res = await axiosInstance(`/products`, {
     method: "GET",
   });
-  return res;
-};
 
-export const sendOTPApi = async (email: any) => {
-  const res = await axiosInstance("/sendOtp", {
-    method: "POST",
-    data: email,
-  });
-  return res;
-};
-
-export const verifyOTPApi = async (formData: any) => {
-  const res = await axiosInstance("/verifyOtp", {
-    method: "POST",
-    data: formData,
-  });
   return res;
 };

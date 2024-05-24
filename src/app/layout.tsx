@@ -6,7 +6,7 @@ import NotistackProvider from "@/providers/notistackProvider";
 import { UserProvider } from "@/providers/UserProvider";
 
 export const metadata: Metadata = {
-  title: "Winlads",
+  title: "Locally",
   description: "",
 };
 

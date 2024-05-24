@@ -6,17 +6,17 @@ import React, { useState } from "react";
 
 function RegisterHeader() {
   return (
-    <div className="flex flex-col items-center justify-between w-full relative gap-9">
-      {/* <Image
+    <div className="flex flex-col items-center justify-between w-full relative">
+      <Image
         src={"/assets/images/register/desstyle.svg"}
         width={404}
         height={346}
         className=" p-2 rounded-2xl py-2 absolute right-0 "
         alt="2023 MAZDA BT-50"
-      /> */}
+      />
       <div className="flex flex-col items-center justify-center w-full">
         <Image
-          src={"/assets/images/register/Car.svg"}
+          src={"/assets/images/register/locallySvg.svg"}
           width={1000}
           height={1000}
           className="rounded-2xl max-w-[15.5rem] w-full h-auto"
@@ -24,7 +24,6 @@ function RegisterHeader() {
         />
         <h3 className="text-[1.6rem] font-black">Create an Account</h3>
       </div>
-      <RegisterTabs/>
     </div>
   );
 }

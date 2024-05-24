@@ -21,8 +21,6 @@ export const UserProvider = ({ children }: any) => {
   const router = useRouter();
   const [user, setUser] = useState<{ email: string; fullName: string }>();
   const [isMainLoading, setIsMainLoading] = useState<boolean>(false);
-  const [subscription, setSubscription] = useState();
-  const [subscriptionPlan, setSubscriptionPlan] = useState();
 
   // const [authenticate, { data, error }] = useAuthenticateUserMutation();
   const [status, setStatus] = useState("idle");
@@ -35,20 +33,20 @@ export const UserProvider = ({ children }: any) => {
       try {
         const res = await authenticateUserApi();
         if (res) {
-          // setUser(res?.data?.user);
-          setUser({
-            email: res.data.user.email,
-            fullName: res.data.user.fullName,
-          });
-          setSubscription(res.data.user.subsciption[0]);
-          setSubscriptionPlan(res.data.user.subscriptionPlan);
+          const role = res?.data?.user?.role;
+          setUser(res?.data?.user);
+          if (role === "CONSUMER") {
+            router.push("/");
+          } else {
+            router.push("/dashboard");
+          }
         } else {
-          router.push("/login");
+          router.push("/");
         }
       } catch (error) {
         console.log("error : ", error);
         setStatus("failed");
-        router.push("/login");
+        router.push("/");
       }
     } else {
       router.push("/login");
@@ -75,8 +73,6 @@ export const UserProvider = ({ children }: any) => {
           isAuthenticated: !!user,
           handleAuthentication,
           isMainLoading,
-          subscription,
-          subscriptionPlan,
         } as any
       }
     >

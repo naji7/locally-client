@@ -29,7 +29,9 @@
     "src/providers/UserProvider.js",
     "src/providers/membershipProvider.ts",
     "src/providers/membershipProvider.js",
-    "src/providers/notistackProvider.jsx"
+    "src/providers/notistackProvider.jsx",
+    "src/components/barChart.js"
+    // "src/components/pages/home/homeContent.js"
   ],
   "exclude": ["node_modules"]
 }
